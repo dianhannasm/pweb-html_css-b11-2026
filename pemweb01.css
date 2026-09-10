@@ -1,0 +1,722 @@
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f8f3ea;
+    color: #292929;
+    line-height: 1.6;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 45px;
+    background-color: #fffdf8;
+}
+
+.logo {
+    font-family: cursive;
+    font-size: 20px;
+    font-weight: bold;
+    font-style: italic;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    font-size: 12px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+
+/* PSEUDO-CLASS */
+
+nav a:hover {
+    color: #e95b38;
+}
+
+.cv-button {
+    background-color: #e95b38;
+    color: white !important;
+    padding: 10px 24px;
+    border-radius: 30px;
+}
+
+.cv-button:hover {
+    background-color: #c94729;
+    transform: translateY(-2px);
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    max-width: 1200px;
+    min-height: 360px;
+    margin: 0 auto;
+    padding: 40px 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fffdf8;
+    overflow: hidden;
+}
+
+.hero-text {
+    width: 50%;
+}
+
+.hello {
+    color: #999;
+    font-size: 19px;
+    margin-bottom: 5px;
+}
+
+.hero h1 {
+    font-size: 55px;
+    line-height: 0.95;
+    letter-spacing: -2px;
+    margin-bottom: 18px;
+}
+
+.roles {
+    display: flex;
+    gap: 9px;
+    font-size: 10px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.quote {
+    font-size: 12px;
+    font-style: italic;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.main-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 18px;
+    text-decoration: none;
+    background-color: #e95b38;
+    color: white;
+    padding: 11px 18px;
+    border-radius: 25px;
+    font-size: 11px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+/* PSEUDO-CLASS */
+
+.main-button:hover {
+    background-color: #c94729;
+    transform: translateY(-3px);
+    box-shadow: 0 7px 15px rgba(0, 0, 0, 0.12);
+}
+
+.main-button span {
+    font-size: 18px;
+}
+
+
+/* =========================
+   HERO IMAGE
+========================= */
+
+.hero-image {
+    width: 48%;
+    height: 330px;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.hero-image img {
+    position: relative;
+    z-index: 2;
+    width: 350px;
+    max-width: 100%;
+    object-fit: contain;
+    align-self: flex-end;
+}
+
+.orange-shape {
+    position: absolute;
+    width: 250px;
+    height: 200px;
+    background-color: #f7d7c5;
+    border-radius: 45% 55% 40% 60%;
+    right: 60px;
+    top: 65px;
+    transform: rotate(-8deg);
+}
+
+.little-star {
+    position: absolute;
+    z-index: 3;
+    top: 20px;
+    left: 50%;
+    font-size: 25px;
+}
+
+.decor {
+    position: absolute;
+    color: #e95b38;
+    font-size: 24px;
+    z-index: 3;
+}
+
+.decor-one {
+    left: 25px;
+    bottom: 95px;
+}
+
+.decor-two {
+    right: 20px;
+    bottom: 150px;
+}
+
+/* =========================
+   ABOUT
+========================= */
+
+.about {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 55px 85px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fffdf8;
+}
+
+.about-text {
+    max-width: 600px;
+}
+
+.section-label {
+    color: #e95b38;
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.about h2,
+.works h2,
+.cv-section h2 {
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.description {
+    font-size: 13px;
+    color: #555;
+    max-width: 600px;
+}
+
+.about-decoration {
+    width: 230px;
+    margin-right: 30px;
+    transform: rotate(-5deg);
+}
+
+.about-decoration p {
+    font-family: cursive;
+    font-size: 17px;
+    font-weight: bold;
+    line-height: 1.25;
+}
+
+.line {
+    font-size: 30px;
+    transform: rotate(-5deg);
+    color: #222;
+}
+
+/* =========================
+   WORKS
+========================= */
+
+.works {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px 85px 45px;
+    background-color: #fffdf8;
+}
+
+.works-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-top: 25px;
+}
+
+.work-card {
+    background-color: #faf0e5;
+    border-radius: 8px;
+    padding: 20px;
+    min-height: 145px;
+    transition: 0.3s;
+}
+
+
+/* PSEUDO-CLASS */
+
+.work-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+    background-color: #f7e8da;
+}
+
+.icon {
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #e95b38;
+
+    color: white;
+
+    border-radius: 50%;
+
+    font-size: 18px;
+
+    margin-bottom: 8px;
+}
+
+.work-card h3 {
+    font-size: 14px;
+
+    margin-bottom: 2px;
+}
+
+.work-card p {
+    color: #777;
+
+    font-size: 10px;
+
+    line-height: 1.5;
+
+    max-width: 300px;
+}
+
+
+/* =========================
+   CTA
+========================= */
+
+.cta {
+    min-height: 70px;
+
+    background-color: #242424;
+
+    border-radius: 9px;
+
+    margin-top: 25px;
+
+    padding: 15px 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    color: white;
+}
+
+.cta p {
+    font-size: 11px;
+    line-height: 1.3;
+
+    flex: 1;
+
+    margin-left: 15px;
+}
+
+.cta-decoration {
+    color: #f1bd4c;
+
+    font-size: 27px;
+}
+
+.cta-decoration.right {
+    color: #f1bd4c;
+}
+
+.cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+
+    text-decoration: none;
+
+    background-color: #e95b38;
+
+    color: white;
+
+    padding: 10px 20px;
+
+    border-radius: 25px;
+
+    font-size: 10px;
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+
+/* PSEUDO-CLASS */
+
+.cta-button:hover {
+    background-color: #ff7653;
+
+    transform: scale(1.05);
+}
+
+.cta-button span {
+    font-size: 16px;
+}
+
+
+/* =========================
+   CREATIVE CV
+========================= */
+
+.cv-section {
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    padding: 60px 85px;
+
+    background-color: #fffdf8;
+}
+
+.cv-content {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+.cv-item {
+    background-color: #faf0e5;
+
+    padding: 25px;
+
+    border-radius: 8px;
+
+    transition: 0.3s;
+}
+
+.cv-item:hover {
+    transform: translateY(-4px);
+}
+
+.cv-item h3 {
+    font-size: 15px;
+
+    margin-bottom: 8px;
+
+    color: #e95b38;
+}
+
+.cv-item p {
+    font-size: 12px;
+
+    color: #666;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    max-width: 1200px;
+
+    min-height: 75px;
+
+    margin: 0 auto;
+
+    padding: 0 70px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background-color: #fffdf8;
+
+    border-top: 1px solid #eee;
+}
+
+.footer-logo {
+    font-family: cursive;
+
+    font-weight: bold;
+    font-style: italic;
+
+    font-size: 18px;
+}
+
+.footer-menu {
+    display: flex;
+
+    gap: 30px;
+}
+
+.footer-menu a {
+    text-decoration: none;
+
+    color: #333;
+
+    font-size: 10px;
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.footer-menu a:hover {
+    color: #e95b38;
+}
+
+.social-media {
+    display: flex;
+
+    gap: 15px;
+
+    font-size: 14px;
+}
+
+.social-media span {
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.social-media span:hover {
+    color: #e95b38;
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+
+    .navbar {
+        padding: 0 25px;
+    }
+
+    nav {
+        gap: 12px;
+    }
+
+    nav a {
+        font-size: 10px;
+    }
+
+    .cv-button {
+        padding: 8px 14px;
+    }
+
+
+    /* HERO */
+
+    .hero {
+        padding: 45px 30px;
+
+        flex-direction: column;
+
+        text-align: center;
+    }
+
+    .hero-text {
+        width: 100%;
+    }
+
+    .hero h1 {
+        font-size: 48px;
+    }
+
+    .roles {
+        justify-content: center;
+
+        flex-wrap: wrap;
+    }
+
+    .hero-image {
+        width: 100%;
+
+        margin-top: 30px;
+    }
+
+
+    /* ABOUT */
+
+    .about {
+        padding: 45px 30px;
+
+        flex-direction: column;
+    }
+
+    .about-decoration {
+        margin-top: 30px;
+        margin-right: 0;
+    }
+
+
+    /* WORKS */
+
+    .works {
+        padding: 30px;
+    }
+
+    .works-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* CTA */
+
+    .cta {
+        padding: 15px;
+
+        gap: 10px;
+    }
+
+
+    /* CV */
+
+    .cv-section {
+        padding: 45px 30px;
+    }
+
+    .cv-content {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* FOOTER */
+
+    footer {
+        padding: 25px;
+
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+    .footer-menu {
+        gap: 20px;
+    }
+}
+
+
+/* =========================
+   MOBILE KECIL
+========================= */
+
+@media (max-width: 480px) {
+
+    .navbar {
+        height: auto;
+
+        padding: 20px;
+
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+    nav {
+        gap: 15px;
+    }
+
+    nav a {
+        font-size: 9px;
+    }
+
+    .hero {
+        padding: 35px 20px;
+    }
+
+    .hero h1 {
+        font-size: 42px;
+    }
+
+    .hero-image {
+        height: 270px;
+    }
+
+    .hero-image img {
+        width: 290px;
+    }
+
+    .orange-shape {
+        width: 210px;
+        height: 160px;
+
+        right: 20px;
+    }
+
+    .about {
+        padding: 40px 25px;
+    }
+
+    .works {
+        padding: 30px 25px;
+    }
+
+    .cta {
+        flex-direction: column;
+
+        text-align: center;
+
+        padding: 20px;
+    }
+
+    .cta p {
+        margin: 0;
+    }
+
+    .cv-section {
+        padding: 40px 25px;
+    }
+}
