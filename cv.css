@@ -1,8 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
 
-/* =========================================
-   VARIABLES (Sesuai pemweb01.css)
-========================================= */
 :root {
     --orange: #f47b20;
     --orange-dark: #d85f0d;
@@ -14,10 +11,6 @@
     --white: #ffffff;
     --shadow: 0 18px 45px rgba(38, 28, 18, .10);
 }
-
-/* =========================================
-   RESET
-========================================= */
 
 * {
     margin: 0;
@@ -31,45 +24,44 @@ html {
 
 body {
     font-family: "DM Sans", sans-serif;
-    background-color: var(--cream);
+    background: var(--cream);
     color: var(--dark);
-    line-height: 1.6;
+    line-height: 1.7;
+    overflow-x: hidden;
 }
 
-/* =========================================
-   PAGE CONTAINER
-========================================= */
-
-.page {
-    width: 100%;
-    max-width: 1200px;
-    margin: 20px auto;
-    background-color: var(--cream);
-    box-shadow: var(--shadow);
-    border-radius: 16px;
-    overflow: hidden;
-    border: 1px solid var(--line);
+img {
+    display: block;
+    max-width: 100%;
 }
 
-/* =========================================
-   NAVBAR
-========================================= */
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* ================= NAVBAR ================= */
 
 .navbar {
-    height: 78px;
-    padding: 0 65px;
+    width: 100%;
+    min-height: 78px;
+    padding: 18px 7%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: var(--cream);
-    border-bottom: 1px solid var(--line);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(255, 250, 243, .94);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(222, 213, 202, .7);
 }
 
 .logo {
     font-family: "Playfair Display", serif;
-    font-size: 24px;
+    font-size: 1.45rem;
     font-weight: 700;
-    color: var(--dark);
+    letter-spacing: -.5px;
 }
 
 .navbar nav {
@@ -79,94 +71,90 @@ body {
 }
 
 .navbar nav a {
-    text-decoration: none;
-    color: var(--dark);
-    font-size: 14px;
+    font-size: .9rem;
     font-weight: 600;
-    transition: color 0.25s ease;
+    position: relative;
+    transition: color .25s ease;
 }
 
-.navbar nav a:hover {
+/* efek garis bawah sama seperti pemweb01 */
+.navbar nav a:not(.active)::after {
+    content: "";
+    width: 0;
+    height: 2px;
+    background: var(--orange);
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: width .25s ease;
+}
+
+.navbar nav a:not(.active):hover {
     color: var(--orange);
 }
 
+.navbar nav a:not(.active):hover::after {
+    width: 100%;
+}
+
+/* CV sebagai halaman aktif */
 .navbar nav .active {
-    background-color: var(--dark);
-    color: var(--white);
     padding: 9px 20px;
+    color: var(--white);
+    background: var(--dark);
     border-radius: 999px;
-    transition: background 0.25s ease, transform 0.25s ease;
+    transition: transform .25s ease, background .25s ease;
 }
 
 .navbar nav .active:hover {
-    background-color: var(--orange);
-    color: var(--white);
+    background: var(--orange);
     transform: translateY(-2px);
 }
 
-/* =========================================
-   CV HERO
-========================================= */
+/* ================= CV HERO ================= */
 
 .cv-hero {
-    min-height: 380px;
-    padding: 40px 65px 0;
-    display: flex;
-    justify-content: space-between;
+    min-height: calc(100vh - 78px);
+    padding: 80px 7%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 70px;
     position: relative;
-    background-color: var(--paper);
+    background: var(--paper);
     overflow: hidden;
-    border-bottom: 1px solid var(--line);
 }
 
 .cv-hero-text {
-    width: 53%;
-    padding-top: 10px;
-    position: relative;
-    z-index: 3;
-}
-
-.back-home {
-    display: inline-block;
-    text-decoration: none;
-    color: var(--gray);
-    font-size: 12px;
-    font-weight: 600;
-    margin-bottom: 18px;
-    transition: color 0.25s ease, transform 0.25s ease;
-}
-
-.back-home:hover {
-    color: var(--orange);
-    transform: translateX(-3px);
+    width: auto;
+    padding-top: 0;
 }
 
 .cv-hero h1 {
     font-family: "Playfair Display", serif;
-    font-size: 38px;
+    font-size: clamp(4.2rem, 7vw, 6.5rem);
+    letter-spacing: -4px;
     line-height: 1.15;
-    font-weight: 700;
     color: var(--dark);
     margin-bottom: 5px;
 }
 
 .cv-hero h2 {
     font-family: "Playfair Display", serif;
-    font-size: 26px;
-    line-height: 1.2;
-    font-weight: 600;
+    font-size: 1.8rem;
     color: var(--orange-dark);
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 .roles {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     gap: 9px;
-    font-size: 13px;
-    font-weight: 600;
+    margin: 20px 0;
     color: var(--gray);
-    margin-bottom: 22px;
+    font-size: .92rem;
+    font-weight: 600;
 }
 
 .roles b {
@@ -174,18 +162,16 @@ body {
 }
 
 .hero-description {
-    max-width: 475px;
-    font-size: 14px;
-    line-height: 1.7;
+    max-width: 700px;
     color: var(--gray);
+    font-size: .92rem;
+    line-height: 1.7;
 }
 
-/* =========================================
-   HERO IMAGE
-========================================= */
+/* ================= HERO IMAGE ================= */
 
 .cv-hero-image {
-    width: 46%;
+    min-height: 560px;
     position: relative;
     display: flex;
     justify-content: center;
@@ -193,42 +179,43 @@ body {
 }
 
 .cv-hero-image img {
-    width: 320px;
-    max-width: 100%;
     position: relative;
     z-index: 2;
-    display: block;
-    border-radius: 160px 160px 0 0;
+    width: min(450px, 85%);
+    height: 560px;
+    object-fit: cover;
+    object-position: center top;
+    border-radius: 230px 230px 18px 18px;
     box-shadow: var(--shadow);
 }
 
 .hero-circle {
     position: absolute;
-    width: 270px;
-    height: 270px;
-    background-color: var(--orange);
-    border-radius: 50%;
-    right: 25px;
-    bottom: 20px;
     z-index: 1;
+    width: 430px;
+    height: 430px;
+    background: var(--orange);
+    border-radius: 50%;
+    top: 60px;
+    right: 7%;
 }
 
 .crown {
     position: absolute;
-    top: 8px;
-    left: 50%;
-    z-index: 4;
-    font-size: 27px;
-    transform: rotate(-5deg);
+    top: 60px;
+    left: 8%;
+    z-index: 3;
+    font-size: 2.3rem;
+    color: var(--orange);
 }
 
 .hero-note {
     position: absolute;
+    top: 35%;
     right: 0;
-    top: 55px;
-    z-index: 5;
+    z-index: 3;
     font-family: "Playfair Display", serif;
-    font-size: 18px;
+    font-size: 1.25rem;
     font-style: italic;
     font-weight: 600;
     color: var(--dark);
@@ -237,61 +224,57 @@ body {
 
 .small-line {
     position: absolute;
-    z-index: 5;
+    z-index: 3;
     color: var(--orange);
-    font-size: 25px;
+    font-size: 2rem;
 }
 
 .line-left {
-    left: 30px;
-    bottom: 105px;
+    bottom: 60px;
+    left: 5%;
 }
 
 .line-right {
-    right: 25px;
-    bottom: 115px;
+    top: 35%;
+    right: 0;
 }
 
-/* =========================================
-   GENERAL SECTION
-========================================= */
+/* ================= GENERAL SECTION ================= */
 
 .section {
-    padding: 40px 65px;
+    padding: 110px 7%;
+    scroll-margin-top: 80px;
 }
 
 .section-title {
-    margin-bottom: 20px;
+    margin-bottom: 40px;
 }
 
 .section-title > span {
     color: var(--orange);
     text-transform: uppercase;
-    letter-spacing: 2px;
-    font-size: 11px;
+    letter-spacing: 3px;
+    font-size: .75rem;
     font-weight: 700;
     display: block;
-    margin-bottom: 4px;
+    margin-bottom: 13px;
 }
 
 .section-title h2 {
     font-family: "Playfair Display", serif;
-    font-size: 24px;
-    font-weight: 700;
-    color: var(--dark);
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    line-height: 1.15;
 }
 
-/* =========================================
-   EXPERIENCE
-========================================= */
+/* ================= EXPERIENCE ================= */
 
 .experience-section {
     display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 40px;
-    padding-top: 35px;
-    padding-bottom: 35px;
-    background-color: var(--cream);
+    grid-template-columns: 1.3fr .7fr;
+    gap: 70px;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    background: var(--paper);
 }
 
 .experience {
@@ -300,35 +283,33 @@ body {
 
 .timeline {
     position: relative;
-    padding-left: 20px;
-    margin-top: 15px;
+    padding-left: 30px;
 }
 
 .timeline::before {
     content: "";
     position: absolute;
-    left: 4px;
-    top: 5px;
+    left: 8px;
+    top: 10px;
     bottom: 10px;
     width: 2px;
-    background-color: var(--line);
+    background: var(--line);
 }
 
 .timeline-item {
     position: relative;
-    min-height: 80px;
-    padding-left: 20px;
+    padding: 0 0 38px 30px;
 }
 
 .timeline-dot {
     position: absolute;
-    width: 10px;
-    height: 10px;
+    left: -1px;
+    top: 6px;
+    width: 18px;
+    height: 18px;
+    border: 4px solid var(--paper);
+    background: var(--orange);
     border-radius: 50%;
-    background-color: var(--orange);
-    left: -20px;
-    top: 5px;
-    border: 2px solid var(--cream);
     box-shadow: 0 0 0 1px var(--orange);
 }
 
@@ -341,79 +322,72 @@ body {
 
 .timeline-content h3 {
     font-family: "Playfair Display", serif;
-    font-size: 15px;
-    font-weight: 700;
-    color: var(--dark);
+    font-size: 1.1rem;
 }
 
 .timeline-content span {
-    font-size: 11px;
+    font-size: .75rem;
     font-weight: 700;
     color: var(--orange);
-    padding-top: 2px;
 }
 
 .timeline-content p {
-    font-size: 12px;
     color: var(--gray);
-    line-height: 1.6;
+    font-size: .85rem;
+    line-height: 1.7;
 }
 
-/* =========================================
-   SIDEBAR
-========================================= */
+/* ================= SIDEBAR ================= */
 
 .cv-sidebar {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 20px;
 }
 
 .side-card {
-    background-color: var(--paper);
-    border-radius: 12px;
+    background: var(--cream);
     border: 1px solid var(--line);
-    padding: 20px;
+    border-radius: 20px;
+    padding: 30px;
 }
 
 .side-title {
     display: flex;
     align-items: center;
-    gap: 8px;
-    margin-bottom: 12px;
+    gap: 10px;
+    margin-bottom: 15px;
 }
 
 .side-icon {
-    font-size: 18px;
+    font-size: 1.3rem;
     color: var(--orange);
 }
 
 .side-title h3 {
     font-family: "Playfair Display", serif;
-    font-size: 16px;
-    font-weight: 700;
+    font-size: 1.2rem;
 }
 
 .side-card h4 {
-    font-size: 13px;
-    font-weight: 700;
-    margin-bottom: 2px;
-    color: var(--dark);
+    font-size: .95rem;
+    margin-bottom: 3px;
 }
 
 .side-card > span {
     display: block;
-    font-size: 11px;
-    font-weight: 600;
     color: var(--orange-dark);
-    margin-bottom: 8px;
+    font-size: .75rem;
+    font-weight: 600;
+    margin-bottom: 10px;
 }
 
 .side-card > p {
-    font-size: 12px;
     color: var(--gray);
-    line-height: 1.6;
+    font-size: .85rem;
+    line-height: 1.7;
 }
+
 
 /* =========================================
    SKILLS
@@ -468,8 +442,8 @@ body {
 .works-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
-    margin-top: 15px;
+    gap: 22px;
+    margin-top: 45px;
 }
 
 .work-card {
@@ -631,8 +605,8 @@ body {
 ========================================= */
 
 footer {
-    min-height: 70px;
-    padding: 0 65px;
+    min-height: 100px;
+    padding: 30px 7%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -684,7 +658,7 @@ footer {
    RESPONSIVE
 ========================================= */
 
-@media (max-width: 900px) {
+@media (max-width: 1100px) {
     .page {
         margin: 0;
         border-radius: 0;
@@ -715,39 +689,87 @@ footer {
     }
 }
 
-@media (max-width: 650px) {
+@media (max-width: 800px) {
     .navbar {
-        height: auto;
-        padding: 18px 25px;
-        flex-direction: column;
-        gap: 15px;
+        padding: 15px 5%;
+        flex-direction: row;
     }
 
     .navbar nav {
-        gap: 15px;
+        gap: 14px;
+    }
+
+        .navbar nav a:not(.active) {
+        display: none;
     }
 
     .cv-hero {
-        flex-direction: column;
-        padding: 25px 25px 0;
+        grid-template-columns: 1fr;
+        min-height: auto;
+        text-align: center;
+        padding: 70px 5% 60px;
+        gap: 40px;
     }
 
-    .cv-hero-text,
-    .cv-hero-image {
+    .cv-hero-text {
         width: 100%;
     }
 
+    .cv-hero h1 {
+        font-size: clamp(3.5rem, 10vw, 5rem);
+        letter-spacing: -3px;
+    }
+
+    .roles {
+        justify-content: center;
+    }
+
+    .hero-description {
+        margin: 0 auto;
+    }
+
     .cv-hero-image {
-        height: 280px;
-        margin-top: 15px;
+        min-height: 390px;
+        width: 100%;
     }
 
     .cv-hero-image img {
-        width: 250px;
+        width: min(320px, 80%);
+        height: 390px;
+    }
+
+    .hero-circle {
+        width: 290px;
+        height: 290px;
+        top: 45px;
+        right: 50%;
+        transform: translateX(50%);
+    }
+
+    .crown {
+        top: 35px;
+        left: 20%;
+    }
+
+    .hero-note {
+        right: 12%;
+    }
+
+    .line-left {
+        bottom: 40px;
+        left: 15%;
+    }
+
+    .line-right {
+        right: 10%;
     }
 
     .section {
         padding: 25px;
+    }
+
+    .experience-section {
+        grid-template-columns: 1fr;
     }
 
     .cv-sidebar,
@@ -756,19 +778,60 @@ footer {
     }
 
     footer {
-        padding: 20px 25px;
+        padding: 30px 5%;
         flex-direction: column;
         gap: 15px;
+        text-align: center;
     }
 }
 
-@media (max-width: 450px) {
+@media (max-width: 560px) {
+    .logo {
+        font-size: 1.2rem;
+    }
+
+    .navbar {
+        padding: 15px 5%;
+    }
+
+    .navbar nav {
+        gap: 10px;
+    }
+
+    .navbar nav .active {
+        padding: 8px 15px;
+    }
+
+    .cv-hero {
+        padding-top: 50px;
+    }
+
     .cv-hero h1 {
-        font-size: 30px;
+        font-size: 3.5rem;
+        letter-spacing: -2px;
     }
 
     .cv-hero h2 {
-        font-size: 22px;
+        font-size: 1.5rem;
+    }
+
+    .cv-hero-image {
+        min-height: 350px;
+    }
+
+    .cv-hero-image img {
+        width: 280px;
+        height: 350px;
+    }
+
+    .hero-circle {
+        width: 250px;
+        height: 250px;
+    }
+
+    .hero-note {
+        font-size: 1rem;
+        right: 5%;
     }
 
     .timeline-content {
