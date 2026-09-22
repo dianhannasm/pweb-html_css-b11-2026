@@ -1,0 +1,232 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 40px;
+    background-color: #ffffff;
+    font-family: "Courier New", monospace;
+}
+
+
+/* ================================
+   TODO CONTAINER
+================================ */
+
+.todo-container {
+    width: 280px;
+    margin: 0 auto;
+    background-color: #f7f3e8;
+
+    border: 2px solid #222;
+    border-radius: 6px;
+
+    box-shadow: 4px 5px 0 #222;
+}
+
+
+/* ================================
+   HEADER
+================================ */
+
+.todo-header {
+    height: 30px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+
+    border-bottom: 1px solid #222;
+
+    font-size: 10px;
+    font-weight: bold;
+}
+
+
+/* ================================
+   CONTENT
+================================ */
+
+.todo-content {
+    padding: 20px 12px 15px;
+}
+
+.todo-content h1 {
+    margin: 0;
+
+    text-align: center;
+
+    font-size: 18px;
+}
+
+.subtitle {
+    margin: 5px 0 15px;
+
+    text-align: center;
+
+    font-size: 7px;
+    color: #888;
+}
+
+
+/* ================================
+   INPUT
+================================ */
+
+.input-area {
+    display: flex;
+    gap: 5px;
+}
+
+#taskInput {
+    flex: 1;
+
+    min-width: 0;
+
+    padding: 6px;
+
+    border: 1px solid #555;
+    border-radius: 4px;
+
+    font-family: inherit;
+    font-size: 8px;
+}
+
+#addButton {
+    padding: 5px 8px;
+
+    border: 1px solid #222;
+    border-radius: 4px;
+
+    background-color: #111;
+    color: white;
+
+    font-family: inherit;
+    font-size: 8px;
+
+    cursor: pointer;
+}
+
+#addButton:hover {
+    background-color: #333;
+}
+
+
+/* ================================
+   FILTER
+================================ */
+
+.filter-area {
+    display: flex;
+    gap: 4px;
+
+    margin: 8px 0;
+}
+
+.filter-button {
+    padding: 3px 7px;
+
+    border: 1px solid #888;
+    border-radius: 10px;
+
+    background-color: white;
+
+    font-family: inherit;
+    font-size: 7px;
+
+    cursor: pointer;
+}
+
+.filter-button:hover {
+    background-color: #ddd;
+}
+
+
+/* FILTER YANG AKTIF */
+
+.filter-button.active-filter {
+    background-color: #111;
+    color: white;
+
+    border-color: #111;
+}
+
+
+/* ================================
+   TASK LIST
+================================ */
+
+#taskList {
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+
+/* ================================
+   TASK
+================================ */
+
+#taskList li {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 8px;
+
+    margin-bottom: 6px;
+    padding: 5px 6px;
+
+    background-color: white;
+
+    border: 1px solid #555;
+    border-radius: 4px;
+
+    font-size: 8px;
+}
+
+
+/* TEKS TUGAS */
+
+#taskList li span {
+    flex: 1;
+
+    cursor: pointer;
+
+    word-break: break-word;
+}
+
+
+/* TUGAS SELESAI */
+
+#taskList li span.completed {
+    text-decoration: line-through;
+    color: #888;
+}
+
+
+/* ================================
+   DELETE BUTTON
+================================ */
+
+#taskList li button {
+    padding: 2px 5px;
+
+    border: 1px solid #aaa;
+    border-radius: 3px;
+
+    background-color: white;
+
+    font-family: inherit;
+    font-size: 7px;
+
+    cursor: pointer;
+}
+
+#taskList li button:hover {
+    background-color: #ddd;
+}
